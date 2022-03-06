@@ -19,11 +19,11 @@ public interface UserRepository {
     @Select("select * from comment where id = #{id}")
     List<Comment> mycomment(String id);
 
-//    @Insert("insert into comment(cid, content, time, id, aid)value(#{cid}, #{content, #{time}, #{id}, #{aid})")
-//    void Post(String cid, String content, String time, String id, String aid);
+    @Insert("insert into comment(cid, content, time, id, aid)value(#{cid}, #{content, #{time}, #{id}, #{aid})")
+    void Post(String cid, String content, String time, String id, String aid);
 
-//    @Select("SELECT content, time, nickname, `comment`.id" +
-//            "FROM article, `comment`, `user`" +
-//            "WHERE `comment`.aid = '0001' and `comment`.id = `user`.id")
-//    List<int> Show_Layout(String aid);
+    @Select("SELECT content, time, nickname, `comment`.id" +
+            "FROM article, `comment`, `user`" +
+            "WHERE `comment`.aid = '0001' and `comment`.id = `user`.id")
+    List<int> Show_Layout(String Stringaid);
 }
