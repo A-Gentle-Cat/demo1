@@ -1,13 +1,11 @@
 package com.example.demo1.repository;
 
 import com.example.demo1.entity.User;
-import com.example.demo1.entity.comment;
+import com.example.demo1.entity.Comment;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.scheduling.support.SimpleTriggerContext;
 
-import javax.xml.stream.events.Comment;
 import java.util.List;
 
 @Mapper
@@ -19,5 +17,13 @@ public interface UserRepository {
     void addUser(String nickname, String sex, String account, String password);
 
     @Select("select * from comment where id = #{id}")
-    List<comment> mycomment(String id);
+    List<Comment> mycomment(String id);
+
+//    @Insert("insert into comment(cid, content, time, id, aid)value(#{cid}, #{content, #{time}, #{id}, #{aid})")
+//    void Post(String cid, String content, String time, String id, String aid);
+
+//    @Select("SELECT content, time, nickname, `comment`.id" +
+//            "FROM article, `comment`, `user`" +
+//            "WHERE `comment`.aid = '0001' and `comment`.id = `user`.id")
+//    List<int> Show_Layout(String aid);
 }

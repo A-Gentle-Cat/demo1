@@ -1,8 +1,9 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.entity.User;
-import com.example.demo1.entity.comment;
+import com.example.demo1.entity.Comment;
 import com.example.demo1.service.UserService;
+import com.example.demo1.utility.ResponseMsg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +20,21 @@ public class UserController{
     public User login(String account, String password) {
         return userService.Login(account, password);
     }
-//    @GetMapping("/signup")
-//    public Responsemsg
+    @GetMapping("/signup")
+    public ResponseMsg signup(String account, String password, String nickname, String sex){
+        return userService.Signup(account, password, nickname, sex);
+    }
+//    @GetMapping("/article")
+//    public ResponseMsg show_layout(String aid){
+//        @GetMapping("/s0
+//
+//    }
     @GetMapping("/check_comment")
-    public List<comment> check_comment(String id){
+    public List<Comment> check_comment(String id){
         return userService.mycomment(id);
+    }
+    @GetMapping("/post")
+    public void post(String content){
+
     }
 }

@@ -1,11 +1,20 @@
 package com.example.demo1.entity;
 
-public class comment {
+public class Comment {
     private String cid;
     private String content;
     private String time;
     private String id;
     private String aid;
+    private static int num;
+
+    public static int getNum() {
+        return num;
+    }
+
+    public static void setNum(int num) {
+        Comment.num = num;
+    }
 
     public String getCid() {
         return cid;
