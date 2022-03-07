@@ -41,23 +41,23 @@ public class UserService {
             return ResponseUtil.error(e.getMessage());
         }
     }
-    public ResponseMsg Post(User user, String content, String aid){
-        String TIME_FORMAT = "yyyy-MM-dd hh-mm-ss";
-        Date date = new Date();
-        SimpleDateFormat FORMAT = new SimpleDateFormat(TIME_FORMAT);
-        String time =FORMAT.format(date);
-        String id = user.getId();
-        String cid = time + String.format("%02d", (int) (Math.random() * 100));
-        System.out.println(time);
-        cid = cid.replace(" ", "");
-        try {
-//            userRepository.Post(cid, content, time, id, aid);
-            return ResponseUtil.success();
-        } catch (Exception e){
-            System.out.println("错误：" + e.getMessage());
-            return ResponseUtil.error(e.getMessage());
-        }
-    }
+//    public ResponseMsg Post(User user, String content, String aid){
+//        String TIME_FORMAT = "yyyy-MM-dd hh-mm-ss";
+//        Date date = new Date();
+//        SimpleDateFormat FORMAT = new SimpleDateFormat(TIME_FORMAT);
+//        String time =FORMAT.format(date);
+//        String id = user.getId();
+//        String cid = time + String.format("%02d", (int) (Math.random() * 100));
+//        System.out.println(time);
+//        cid = cid.replace(" ", "");
+//        try {
+////            userRepository.Post(cid, content, time, id, aid);
+//            return ResponseUtil.success();
+//        } catch (Exception e){
+//            System.out.println("错误：" + e.getMessage());
+//            return ResponseUtil.error(e.getMessage());
+//        }
+//    }
 //    public show_layout(String aid){
 //        return
 //    }

@@ -33,8 +33,8 @@ public class UserController{
     public List<Comment> check_comment(String id){
         return userService.mycomment(id);
     }
-    @GetMapping("/post")
-    public void post(String content){
-
-    }
+//    @GetMapping("/post")
+//    public void post(String content){
+//
+//    }
 }
